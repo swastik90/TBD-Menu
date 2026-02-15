@@ -142,6 +142,60 @@ footer strong{
     font-family:'Playfair Display', serif;
 }
 
+/* ================= TOP BAR ================= */
+
+.top-bar{
+    background:#111;
+    color:#d4af37;
+    padding:10px 20px;
+    font-size:13px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    border-bottom:1px solid rgba(212,175,55,0.2);
+    text-align:center;
+    line-height:1.6;
+}
+
+.item{
+    padding:14px 0;
+}
+
+
+@media (max-width: 600px){
+
+    header h1{
+        font-size:26px;
+        letter-spacing:1px;
+    }
+
+    .section{
+        padding:30px 15px;
+    }
+
+    .item{
+        font-size:13px;
+    }
+
+    .price{
+        font-size:13px;
+    }
+
+}
+.top-bar a{
+    color:#d4af37;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.top-bar a:hover{
+    color:#fff3c4;
+}
+
+
+
+
 </style>
 </head>
 <body>
@@ -149,6 +203,14 @@ footer strong{
 <header>
 <h1>The Biryani Drop</h1>
 </header>
+
+<!-- TOP CONTACT BAR -->
+<div class="top-bar">
+    <a href="tel:+918079862715">📞 +91 8079862715</a>
+    <a href="tel:+918260883706">📞 +91 8260883706</a>
+    <span>FSSAI License No: 22025056000411</span>
+</div>
+
 
 <!-- STARTERS -->
 <div class="section">
