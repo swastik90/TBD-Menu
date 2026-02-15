@@ -17,16 +17,16 @@ body{
     overflow-x:hidden;
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 
 header{
     text-align:center;
-    padding:70px 20px 50px;
+    padding:50px 20px 30px;
 }
 
 header h1{
     font-family:'Playfair Display', serif;
-    font-size:38px;
+    font-size:32px;
     letter-spacing:3px;
     background:linear-gradient(90deg,#d4af37,#fff3c4,#d4af37);
     background-size:200%;
@@ -34,15 +34,10 @@ header h1{
     -webkit-text-fill-color:transparent;
     animation:shine 6s linear infinite;
 }
+
 header span{
-    font-family:'Playfair Display', serif;
-    font-size:18px;
-    letter-spacing:3px;
-    background:linear-gradient(90deg,#d4af37,#fff3c4,#d4af37);
-    background-size:200%;
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    animation:shine 6s linear infinite;
+    font-size:14px;
+    color:#d4af37;
 }
 
 @keyframes shine{
@@ -50,181 +45,124 @@ header span{
     100%{background-position:200%;}
 }
 
-/* ================= SECTIONS ================= */
-
-.section{
-    padding:40px 20px;
-    max-width:800px;
-    margin:auto;
-    animation:fadeUp 1s ease forwards;
-    opacity:0;
-}
-
-.section:nth-of-type(1){animation-delay:.2s;}
-.section:nth-of-type(2){animation-delay:.4s;}
-.section:nth-of-type(3){animation-delay:.6s;}
-.section:nth-of-type(4){animation-delay:.8s;}
-.section:nth-of-type(5){animation-delay:1s;}
-
-@keyframes fadeUp{
-    from{transform:translateY(30px);opacity:0;}
-    to{transform:translateY(0);opacity:1;}
-}
-
-.section h2{
-    font-family:'Playfair Display', serif;
-    font-size:28px;
-    margin-bottom:30px;
-    border-left:4px solid #d4af37;
-    padding-left:12px;
-    color:#d4af37;
-}
-
-/* ================= CATEGORY ================= */
-
-.category{
-    margin-bottom:35px;
-}
-
-.category h3{
-    margin-bottom:18px;
-    font-size:15px;
-    letter-spacing:1px;
-    display:flex;
-    align-items:center;
-    gap:8px;
-    color:#ffffffdd;
-}
-
-/* Veg & Non-Veg Indicator */
-
-.food-indicator{
-    width:14px;
-    height:14px;
-    border-radius:2px;
-    border:1px solid rgba(255,255,255,0.4);
-}
-
-.veg{
-    background:#1faa00;
-    box-shadow:0 0 6px #1faa00;
-}
-
-.nonveg{
-    background:#c40000;
-    box-shadow:0 0 6px #c40000;
-}
-
-/* ================= ITEMS ================= */
-
-.item{
-    display:flex;
-    justify-content:space-between;
-    padding:12px 0;
-    border-bottom:1px solid rgba(255,255,255,0.06);
-    font-size:14px;
-    transition:.3s ease;
-}
-
-.item:hover{
-    background:rgba(212,175,55,0.05);
-    padding-left:8px;
-}
-
-.price{
-    color:#d4af37;
-    font-weight:500;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-    text-align:center;
-    padding:60px 20px;
-    font-size:14px;
-    color:#cccccc;
-}
-
-footer strong{
-    color:#d4af37;
-    display:block;
-    margin-bottom:10px;
-    font-family:'Playfair Display', serif;
-}
-
-/* ================= TOP BAR ================= */
+/* TOP BAR */
 
 .top-bar{
     background:#111;
-    color:#d4af37;
-    padding:10px 20px;
-    font-size:13px;
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
-    border-bottom:1px solid rgba(212,175,55,0.2);
+    padding:10px;
     text-align:center;
-    line-height:1.6;
+    font-size:13px;
+    border-bottom:1px solid rgba(212,175,55,0.2);
 }
 
-.item{
-    padding:14px 0;
-}
-
-
-@media (max-width: 600px){
-
-    header h1{
-        font-size:26px;
-        letter-spacing:1px;
-    }
-
-    .section{
-        padding:30px 15px;
-    }
-
-    .item{
-        font-size:13px;
-    }
-
-    .price{
-        font-size:13px;
-    }
-
-}
 .top-bar a{
     color:#d4af37;
     text-decoration:none;
-    transition:0.3s;
+    margin:0 15px;
 }
 
 .top-bar a:hover{
     color:#fff3c4;
 }
 
+/* SECTIONS */
 
+.section{
+    max-width:800px;
+    margin:auto;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
 
+.section h2{
+    padding:18px 20px;
+    font-family:'Playfair Display', serif;
+    font-size:20px;
+    color:#d4af37;
+    cursor:pointer;
+    position:relative;
+}
 
+.section h2::after{
+    content:'+';
+    position:absolute;
+    right:20px;
+    font-size:22px;
+}
+
+.section.active h2::after{
+    content:'−';
+}
+
+.section-content{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.4s ease;
+    padding:0 20px;
+}
+
+/* CATEGORY */
+
+.category{
+    margin:20px 0;
+}
+
+.category h3{
+    margin-bottom:10px;
+    font-size:15px;
+    color:#ffffffcc;
+}
+
+/* ITEMS */
+
+.item{
+    display:flex;
+    justify-content:space-between;
+    padding:10px 0;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+    font-size:14px;
+}
+
+.price{
+    color:#d4af37;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:40px 20px;
+    font-size:14px;
+    color:#cccccc;
+}
+
+footer strong{
+  color:#d4af37;
+}
+
+/* MOBILE */
+
+@media (max-width:600px){
+    header h1{font-size:26px;}
+}
 </style>
 </head>
-<body>
 
+<body>
+  
 <header>
 <h1>The Biryani Drop</h1>
 <span>FSSAI License No: 22025056000411</span>
 </header>
 
-<!-- TOP CONTACT BAR -->
 <div class="top-bar">
     <a href="tel:+918079862715">📞 +91 8079862715</a>
     <a href="tel:+918260883706">📞 +91 8260883706</a>
 </div>
 
-
-<!-- STARTERS -->
-<div class="section">
-<h2>Starters</h2>
+<!-- ================= STARERS ================= -->
+<div class="section active">
+<h2 onclick="toggleSection(this)">Starters</h2>
+<div class="section-content" style="max-height:2000px;">
 
 <div class="category">
 <h3>Veg</h3>
@@ -249,11 +187,14 @@ footer strong{
 <div class="item"><span>Chicken Manchurian</span><span class="price">129</span></div>
 <div class="item"><span>Chicken Lollipop</span><span class="price">119</span></div>
 </div>
+
+</div>
 </div>
 
-<!-- MAIN COURSE -->
+<!-- ================= MAIN COURSE ================= -->
 <div class="section">
-<h2>Main Course</h2>
+<h2 onclick="toggleSection(this)">Main Course</h2>
+<div class="section-content">
 
 <div class="category">
 <h3>Veg</h3>
@@ -287,11 +228,14 @@ footer strong{
 <div class="item"><span>Egg Omelette</span><span class="price">49</span></div>
 <div class="item"><span>Egg Bhurji</span><span class="price">49</span></div>
 </div>
+
+</div>
 </div>
 
-<!-- BIRYANI & RICE -->
+<!-- ================= BIRYANI ================= -->
 <div class="section">
-<h2>Biryani & Rice</h2>
+<h2 onclick="toggleSection(this)">Biryani & Rice</h2>
+<div class="section-content">
 
 <div class="category">
 <h3>Veg</h3>
@@ -310,11 +254,14 @@ footer strong{
 <div class="item"><span>Egg Fried Rice</span><span class="price">99</span></div>
 <div class="item"><span>Chicken Fried Rice</span><span class="price">119</span></div>
 </div>
+
+</div>
 </div>
 
-<!-- NOODLES -->
+<!-- ================= NOODLES ================= -->
 <div class="section">
-<h2>Noodles</h2>
+<h2 onclick="toggleSection(this)">Noodles</h2>
+<div class="section-content">
 
 <div class="category">
 <h3>Veg</h3>
@@ -327,21 +274,51 @@ footer strong{
 <div class="item"><span>Chicken Noodles</span><span class="price">69</span></div>
 <div class="item"><span>Chicken Schezwan Noodles</span><span class="price">89</span></div>
 </div>
+
+</div>
 </div>
 
-<!-- BREADS -->
+<!-- ================= BREADS ================= -->
 <div class="section">
-<h2>Breads</h2>
+<h2 onclick="toggleSection(this)">Breads</h2>
+<div class="section-content">
 
 <div class="item"><span>Plain Roti</span><span class="price">5</span></div>
 <div class="item"><span>Butter Roti</span><span class="price">8</span></div>
 <div class="item"><span>Lachha Paratha</span><span class="price">39</span></div>
+
+</div>
 </div>
 
 <footer>
 <strong>Where Every Grain Tells a Story</strong>
 Authentic flavors. Timeless recipes. Unforgettable taste.
 </footer>
+
+<script>
+function toggleSection(element){
+
+    const sections = document.querySelectorAll('.section');
+
+    sections.forEach(sec=>{
+        if(sec !== element.parentElement){
+            sec.classList.remove('active');
+            sec.querySelector('.section-content').style.maxHeight = null;
+        }
+    });
+
+    const section = element.parentElement;
+    const content = section.querySelector('.section-content');
+
+    section.classList.toggle('active');
+
+    if(content.style.maxHeight){
+        content.style.maxHeight = null;
+    } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+    }
+}
+</script>
 
 </body>
 </html>
